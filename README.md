@@ -8,7 +8,7 @@ Code:
     vim Dockerfile
     git clone https://github.com/pingkyoktiawati/btj-academy.git
     docker build -t ubuntu:grade-mahasiswa -f Dockerfile .
-    docker run -it -d --name pingky ubuntu:grade-mahasiswa
+    docker run -it -d --name pingky2 ubuntu:grade-mahasiswa
     docker ps -a
     docker images -a
         
