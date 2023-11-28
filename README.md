@@ -27,7 +27,7 @@ Dockerfile:
 172.17.0.2
 
 ### Isi file docker container whoami
-. .. whoami
+Oofooni1eeb9aengol3feekiph6fieve
 
 ### Image yang digunakan pada docker container whoami
 Image = secret:aequaix9De6dii1ay4HeeWai2obie6Ei
