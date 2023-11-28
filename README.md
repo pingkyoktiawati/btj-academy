@@ -30,5 +30,4 @@ Dockerfile:
 Oofooni1eeb9aengol3feekiph6fieve
 
 ### Image yang digunakan pada docker container whoami
-Image = secret:aequaix9De6dii1ay4HeeWai2obie6Ei
-Image Id = f3464846ab67
+sha256:f3464846ab67b3dfbe1cf9b7ee41d28634cb7ed23780c1d4197ff849d5e62f7a
