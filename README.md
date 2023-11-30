@@ -1,12 +1,11 @@
 # BTJ Academy
-![BTJ Logo](https://bangunindo.com/backend_assets/img/Image-01.png)
-## Simple Task
+
+## Simple Task Development Environment I | 27 November 2023
 
 ### Membuat image dari aplikasi sederhana yang sudah dibuat dan menjalankannya sebagai container pada port 8081
 Code:
 
     vim Dockerfile
-    git clone https://github.com/pingkyoktiawati/btj-academy.git
     docker build -t ubuntu:grade-mahasiswa -f Dockerfile .
     docker run -it -d --name pingky2 ubuntu:grade-mahasiswa
     docker ps -a
