@@ -1,0 +1,11 @@
+- name: Run Docker Container
+  hosts: btj-academy
+  become: true
+  tasks:
+    - docker_container:
+        name: pingky
+        image: "ubuntu:{{ docker_tag }}"
+        interactive: true
+        tty: true
+        exposed_ports:
+          - "6972"
