@@ -32,14 +32,14 @@ Isi dari file app yang sudah di edit adalah:
     
     @app.route('/')
     def hello_world():
-	    return 'Hello, Docker!'
+    	return 'Hello, Docker!'
     
     @app.route('/about')
     def about():
-	    return 'Docker is one of the subjects at BTJ Academy'
+    	return 'Docker is one of the subjects at BTJ Academy'
 	
-	if __name__ == '__main__':
-		app.run(debug=True, host='0.0.0.0', port=5070)
+    if __name__ == '__main__':
+	app.run(debug=True, host='0.0.0.0', port=5070)
 
 
 Di tambahkan routing yang menampilkan **"*Docker is one of the subjects at BTJ Academy*"** dan port **5070**.
@@ -64,9 +64,9 @@ Membuat inventory menggunakan teks editor pada virtual machine:
 Isi dari file inventory:
 
     all:
-        hosts:
-	        btj-academy:
-		        ansible_host: 10.184.0.100
+    	hosts:
+     	    btj-academy:
+       		ansible_host: 10.184.0.100
 Inventory merupakan kumpulan managed nodes atau sering disebut hostfile. Pada grup inventory ini di definisikan host dengan nama **btj-academy** dengan IP **10.184.0.100**.
 
 ### Membuat Playbook
@@ -80,26 +80,26 @@ Isi dari file playbook:
 	  become: true
 	  tasks:
 		  - name: copy Dockerfile
-			ansible.builtin.copy:
-				src: /home/pingkyoktiawaty/btj-academy-pingky/btj-academy/Dockerfile
-				dest: btj-academy-pingky
-				mode: '0644'
+		    ansible.builtin.copy:
+			src: /home/pingkyoktiawaty/btj-academy-pingky/btj-academy/Dockerfile
+			dest: btj-academy-pingky
+			mode: '0644'
 		  - name: copy app.py
 		    ansible.builtin.copy:
-			    src: /home/pingkyoktiawaty/btj-academy-pingky/btj-academy/app.py
-				dest: btj-academy-pingky
-				mode: '0644'
+      			src: /home/pingkyoktiawaty/btj-academy-pingky/btj-academy/app.py
+			dest: btj-academy-pingky
+			mode: '0644'
 		  - name: copy requirements.txt
 		    ansible.builtin.copy:
-				src: /home/pingkyoktiawaty/btj-academy-pingky/btj-academy/requirements.txt
-				dest: btj-academy-pingky
-				mode: '0644'
+			src: /home/pingkyoktiawaty/btj-academy-pingky/btj-academy/requirements.txt
+			dest: btj-academy-pingky
+			mode: '0644'
 		  - name: build docker image
 		    ansible.builtin.command:
-				cmd: 'docker build -t app-flask:0.1.0 btj-academy-pingky'
+			cmd: 'docker build -t app-flask:0.1.0 btj-academy-pingky'
 		  - name: run docker container
 		    ansible.builtin.command:
-				cmd: 'docker run -it -d --name pingky-flask -p 5070:5070 app-flask:0.1.0'
+			cmd: 'docker run -it -d --name pingky-flask -p 5070:5070 app-flask:0.1.0'
     
 Playbook merupakan manajemen konfigurasi. Playbook ini akan menjalankan docker container dengan host **btj-academy**. Konfigurasi ini dijalankan sebagai **root**. Modul yang digunakan untuk menyalin file Dockerfile, app python, dan requirements adalah **ansible.builtin.copy** dengan sumber local pada sub-folder **btj-academy** dan tujuan server pada folder **btj-academy-pingky**. Mode hak aksesnya adalah **0644** atau **rw-r--r--**, artinya pemilik memiliki hak baca dan tulis (4 + 2 = 6), grup hanya memiliki hak baca (4), dan lainnya memiliki hak baca (4). Kemudian modul yang digunakan untuk membangun docker image dan menjalankan docker containernya adalah **ansible.builtin.command**. Perintah tersebut membangun image dengan nama  **app-flask:0.1.0** dan nama container **pingky-flask**. Docker container ini dijalankan pada port **5070**.
 
@@ -115,6 +115,7 @@ Setelah playbook dijalankan maka akan terbentuk docker container dengan nama **p
 ### Menjalankan Website
 
 http://btj-academy.bangunindo.io:5070/
+
 http://btj-academy.bangunindo.io:5070/about
 
 Untuk mendapatkan informasi bahwa website dapat berjalan pada port 5070 dan melihat history aksesnya dapat menggunakan command berikut:
