@@ -1,9 +1,6 @@
-
-# BTJ Academy
-
 ## Simple Task Development Environment I | 27 November 2023
 
-#### Membuat image dari aplikasi sederhana yang sudah dibuat dan menjalankannya sebagai container pada port 8081
+### Membuat image dari aplikasi sederhana yang sudah dibuat dan menjalankannya sebagai container pada port 8081
 Dockerfile:
 
     FROM python:3.11-alpine
@@ -26,18 +23,18 @@ Untuk memastikan docker sudah terbuat dapat melihatnya dengan command berikut,
     docker images -a
     docker ps-a
 
-#### IP docker container whoami
+### IP docker container whoami
 
     docker inspect whoami
 Pada bagian NetworkingSettings lalu Networks akan ditemukan IPAddress dari whoami, yaitu 172.17.0.2
 
-#### Isi file docker container whoami
+### Isi file docker container whoami
 
     docker inspect whoami
     cat /home/local/.docker/whoami
 Pada bagian Mounts lalu Source akan ditemukan path dimana isi file dari docker container whoami tersembunyi adalah Oofooni1eeb9aengol3feekiph6fieve
 
-#### Image yang digunakan pada docker container whoami
+### Image yang digunakan pada docker container whoami
 
     docker ps
 Image pada docker container whoami adalah secret:aequaix9De6dii1ay4HeeWai2obie6Ei
