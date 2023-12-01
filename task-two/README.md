@@ -6,6 +6,7 @@
 	- Menyalin file dari local ke server btj-academy
 	- Membangun docker image untuk example python app
 	- Menjalankan docker container yang sudah di build
+
 *note: pada kasus ini, file akan disalin dari sub-folder ke folder utama yang ada diserver, hal ini karena terdapat masalah pada local*
 
 ### Mempersiapkan folder dan mengunduh example python app dari repository
