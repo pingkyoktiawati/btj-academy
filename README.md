@@ -1,4 +1,5 @@
-## Simple Task Development Environment I | 27 November 2023
+# Simple Task Development Environment I 
+####27 November 2023
 
 ### Membuat image dari aplikasi sederhana yang sudah dibuat dan menjalankannya sebagai container pada port 8081
 Dockerfile:
