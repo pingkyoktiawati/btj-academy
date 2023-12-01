@@ -12,11 +12,11 @@ Membuat inventory menggunakan teks editor pada virtual machine:
 Isi dari file inventory adalah:
 
     all:
-	    vars:
-		    docker_tag: latest
-		hosts:
-			btj-academy:
-				ansible_host: 10.184.0.100
+    	vars:
+     		docker_tag: latest
+	hosts:
+		btj-academy:
+			ansible_host: 10.184.0.100
 
 Inventory merupakan kumpulan managed nodes atau sering disebut hostfile. Pada grup inventory ini di definisikan variabel dengan nama **docker_tag** yang akan digunakan untuk tag image pada docker container. Selain itu di definisikan host dengan nama **btj-academy** dengan IP **10.184.0.100**.
 
@@ -40,7 +40,7 @@ Isi dari file playbook adalah:
 			        - "6972"
 
 
-Playbook merupakan manajemen konfigurasi. Playbook ini akan menjalankan docker container dengan host btj-academy. Konfigurasi ini dijalankan sebagai root (True). Modul yang digunakan adalah **docker_container** dengan nama container **pingky** dan image yang digunakan adalah **ubuntu versi terakhir**. Docker container ini dijalankan secara interaktif dengan port **6972**.
+Playbook merupakan manajemen konfigurasi. Playbook ini akan menjalankan docker container dengan host **btj-academy**. Konfigurasi ini dijalankan sebagai **root**. Modul yang digunakan adalah **docker_container** dengan nama container **pingky** dan image yang digunakan adalah **ubuntu versi terakhir**. Docker container ini dijalankan secara interaktif dengan port **6972**.
 
 ### Menjalankan playbook
 Menjalankan playbook dengan command berikut:
