@@ -65,8 +65,8 @@ Isi dari file inventory:
 
     all:
     	hosts:
-     	    btj-academy:
-       		ansible_host: 10.184.0.100
+     		btj-academy:
+       			ansible_host: 10.184.0.100
 Inventory merupakan kumpulan managed nodes atau sering disebut hostfile. Pada grup inventory ini di definisikan host dengan nama **btj-academy** dengan IP **10.184.0.100**.
 
 ### Membuat Playbook
@@ -86,7 +86,7 @@ Isi dari file playbook:
 			mode: '0644'
 		  - name: copy app.py
 		    ansible.builtin.copy:
-      			src: /home/pingkyoktiawaty/btj-academy-pingky/btj-academy/app.py
+      		        src: /home/pingkyoktiawaty/btj-academy-pingky/btj-academy/app.py
 			dest: btj-academy-pingky
 			mode: '0644'
 		  - name: copy requirements.txt
