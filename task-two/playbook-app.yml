@@ -1,0 +1,25 @@
+- name: Copy File, Build and Run Docker Container
+  hosts: btj-academy
+  become: true
+  tasks:
+    - name: copy Dockerfile
+      ansible.builtin.copy:
+        src: /home/pingkyoktiawaty/btj-academy-pingky/btj-academy/Dockerfile
+        dest: btj-academy-pingky
+        mode: '0644'
+    - name: copy app.py
+      ansible.builtin.copy:
+        src: /home/pingkyoktiawaty/btj-academy-pingky/btj-academy/app.py
+        dest: btj-academy-pingky
+        mode: '0644'
+    - name: copy requirements.txt
+      ansible.builtin.copy:
+        src: /home/pingkyoktiawaty/btj-academy-pingky/btj-academy/requirements.txt
+        dest: btj-academy-pingky
+        mode: '0644'
+    - name: build docker image
+      ansible.builtin.command:
+        cmd: 'docker build -t app-flask:0.1.0 btj-academy-pingky'
+    - name: run docker container
+      ansible.builtin.command:
+        cmd: 'docker run -it -d --name pingky-flask -p 5070:5070 app-flask:0.1.0'
