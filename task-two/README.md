@@ -39,7 +39,7 @@ Isi dari file app yang sudah di edit adalah:
     	return 'Docker is one of the subjects at BTJ Academy'
 	
     if __name__ == '__main__':
-	app.run(debug=True, host='0.0.0.0', port=5070)
+    	app.run(debug=True, host='0.0.0.0', port=5070)
 
 
 Di tambahkan routing yang menampilkan **"*Docker is one of the subjects at BTJ Academy*"** dan port **5070**.
